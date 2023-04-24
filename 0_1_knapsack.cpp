@@ -1,14 +1,11 @@
-// A dynamic programming based
-// solution for 0-1 Knapsack problem
+// Time Complexity : O(N *W)
+// Auxiliary Space : O(N *W)
+
 #include <bits/stdc++.h>
 using namespace std;
 
-// A utility function that returns
-// maximum of two integers
 int max(int a, int b) { return (a > b) ? a : b; }
 
-// Returns the maximum value that
-// can be put in a knapsack of capacity W
 int knapSack(int W, int wt[], int val[], int n) {
   vector<vector<int>> K(n + 1, vector<int>(W + 1));
 
@@ -26,7 +23,6 @@ int knapSack(int W, int wt[], int val[], int n) {
   return K[n][W];
 }
 
-// Driver Code
 int main() {
   int profit[] = {60, 100, 120};
   int weight[] = {10, 20, 30};
@@ -37,5 +33,3 @@ int main() {
 
   return 0;
 }
-
-// This code is contributed by Debojyoti Mandal
