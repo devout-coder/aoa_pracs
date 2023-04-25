@@ -1,10 +1,9 @@
-// A C program for Prim's Minimum
+// A C++ program for Prim's Minimum
 // Spanning Tree (MST) algorithm. The program is
 // for adjacency matrix representation of the graph
 
-#include <limits.h>
-#include <stdbool.h>
-#include <stdio.h>
+#include <bits/stdc++.h>
+using namespace std;
 
 // Number of vertices in the graph
 #define V 5
@@ -26,9 +25,9 @@ int minKey(int key[], bool mstSet[]) {
 // A utility function to print the
 // constructed MST stored in parent[]
 void printMST(int parent[], int graph[V][V]) {
-  printf("Edge \tWeight\n");
+  cout << "Edge \tWeight\n";
   for (int i = 1; i < V; i++)
-    printf("%d - %d \t%d \n", parent[i], i, graph[i][parent[i]]);
+    cout << parent[i] << " - " << i << " \t" << graph[i][parent[i]] << " \n";
 }
 
 // Function to construct and print MST for
@@ -37,8 +36,10 @@ void printMST(int parent[], int graph[V][V]) {
 void primMST(int graph[V][V]) {
   // Array to store constructed MST
   int parent[V];
+
   // Key values used to pick minimum weight edge in cut
   int key[V];
+
   // To represent set of vertices included in MST
   bool mstSet[V];
 
@@ -78,7 +79,7 @@ void primMST(int graph[V][V]) {
         parent[v] = u, key[v] = graph[u][v];
   }
 
-  // print the constructed MST
+  // Print the constructed MST
   printMST(parent, graph);
 }
 
@@ -95,3 +96,5 @@ int main() {
 
   return 0;
 }
+
+// This code is contributed by rathbhupendra
